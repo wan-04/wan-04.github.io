@@ -4,5 +4,9 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+
+👨‍💼 My name is Nguyen Cong Quang, also know under my nickname **wan**
+
+# Contact Me
+
+You can reach out to me on Discord (wan_04).
