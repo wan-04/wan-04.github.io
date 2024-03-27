@@ -1,8 +1,8 @@
 ---
 title: Codeforces Round 935
 date: 2024-03-27 14-21-44
-categories: [CTF]
-tags: [coding, Codeforces]
+categories: [coding]
+tags: [Codeforces]
 image: /assets/image/image.png
 math: true
 ---
