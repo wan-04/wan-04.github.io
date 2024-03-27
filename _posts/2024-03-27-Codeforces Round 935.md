@@ -8,7 +8,7 @@ math: true
 ---
 
 # A. Setting up Camp
-
+[link](https://codeforces.com/contest/1945)
 ## Tóm tắt đề bài
 
 - Có 3 nhóm người: `a` người hướng nội, `b` người hướng ngoại, `c` người bình thường - Người hướng nội chỉ ở lều có 1 người - Người hướng ngoại chỉ ở lều với 2 người (lều 3 người) - Người bình thường có thể ở lều 1, 2 hoặc 3 người
