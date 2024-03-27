@@ -3,7 +3,7 @@ title: Codeforces Round 935
 date: 2024-03-27 14-21-44
 categories: [CTF]
 tags: [pwn, HTB]
-image: /assets/image/htb.jpg
+image: /assets/image/image.png
 math: true
 ---
 
@@ -37,3 +37,5 @@ for i in range(n):
     print(m//a + m//b + 2)
 
 ```
+
+# C. 
