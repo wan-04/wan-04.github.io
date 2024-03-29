@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int min(int a, int b)
+long long a[300000];
+long long b[300000];
+long long min(long long a, long long b)
 {
     if (a > b)
         return b;
@@ -15,30 +16,23 @@ int main()
     scanf("%d", &cnt);
     while (cnt--)
     {
-        int m, n;
-        scanf("%d%d", &n, &m);
-        long long a[2][n + 5];
+        long long n, m;
+        scanf("%lld%lld", &n, &m);
         for (int i = 1; i <= n; i++)
-            scanf("%d", &a[0][i]);
+            scanf("%lld", &a[i]);
         for (int i = 1; i <= n; i++)
-            scanf("%d", &a[1][i]);
-        long long res = 0;
-        long long ans = 1e18;
-        for (int i = 1; i <= n; i++)
+            scanf("%lld", &b[i]);
+        long long sum = 0;
+        for (int i = m + 1; i <= n; i++)
         {
-            if (a[0][i] <= a[1][i])
-            {
-                res += a[0][i];
-                if (i <= m)
-                    ans = min(ans, res);
-            }
-            else
-            {
-                if (i <= m)
-                    ans = min(ans, res + a[0][i]);
-                res += a[1][i];
-            }
+            sum += min(a[i], b[i]);
         }
-        printf("%lld\n", ans);
+        long long tmp = 1e14, ans = 0;
+        for (int i = m; i >= 1; i--)
+        {
+            tmp = min(tmp, ans + a[i]);
+            ans += b[i];
+        }
+        printf("%lld\n", sum+tmp);
     }
 }
