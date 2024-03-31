@@ -1,5 +1,5 @@
 ---
-title: Codeforces Round 935
+title: Codeforces Round 935 
 date: 2024-03-27 14-21-44
 categories: [coding]
 tags: [Codeforces]
@@ -7,7 +7,7 @@ image: /assets/image/image.png
 math: true
 ---
 [link contest](https://codeforces.com/contest/1945)
-# A. Setting up Camp
+## A. Setting up Camp
 
 ```python
 n = int(input())

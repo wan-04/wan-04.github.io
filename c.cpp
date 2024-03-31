@@ -1,31 +1,31 @@
 #include <iostream>
 #include <math.h>
 #include <algorithm>
+#include <string.h>
+#include <cstdlib>
+#include <iomanip>
 using namespace std;
-
+int a[16]={10,11,101,111,1001,1011,1101,1111,11111,10111,11011,11101,10011,10001,11001,10101};
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-        int n, cnt = 1;
+        int n;
         cin >> n;
-        int a[n + 5];
-        for (int i = 1; i <= n; i++)
-            cin >> a[i];
-        sort(a + 1, a + 1 + n);
-        int mid_idx = ceil(1.00 * n / 2);
-        int mid_val = a[mid_idx];
-        for (int i = mid_idx+1; i <= n; i++)
+        bool check = true;
+        int cnt = 0;
+        for (int i = 15; i >= 0; i--)
         {
-            if (a[i] == mid_val)
+            while (n % a[i] == 0)
             {
-
-                cnt++;
+                n /= a[i];
             }
-            else break;
         }
-        cout << cnt << "\n";
+        if (n == true)
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
     }
 }
