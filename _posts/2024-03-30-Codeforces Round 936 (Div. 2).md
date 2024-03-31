@@ -3,7 +3,6 @@ title: Codeforces Round 936 (Div. 2)
 date: 2024-03-30 03-27-39
 categories: [coding]
 tags: [Codeforces]
-image: /assets/image/htb.jpg
 math: true
 ---
 
