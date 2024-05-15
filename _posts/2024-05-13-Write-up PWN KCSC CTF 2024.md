@@ -39,7 +39,7 @@ if ( v6 > 3 )
 
 ![](/assets/2024-05-13-Write-up%20PWN%20KCSC%20CTF%202024/2024-05-13-15-27-32.png)
 
-```c
+```python
 buy(-2)
 infoo()
 p.recvuntil(b'1. ')
@@ -51,7 +51,7 @@ info("exe.address " + hex(exe.address))
 
 - Sau khi mình tìm hiểu ở [pwn> scanf and hateful dot](https://rehex.ninja/posts/scanf-and-hateful-dot/) thì mình hiểu như sau. Với `%d` và mình sử dụng `.` thì sẽ không ghi vào biến. Nghĩa là nếu lần đầu tiên mình sửa dụng `scanf` nhập vào `1234` và lần thứ hai mình nhập `.` thì biến đó vẫn có giá trị là `1234`
 
-```c
+```python
 pop_rdi = exe.address + 0x0000000000001a13
 buy(0)
 sell(0)
@@ -67,7 +67,7 @@ info("libc.address: " + hex(libc.address))
 
 #### RET2LIBC
 
-```c
+```python
 buy(-2)
 buy(0)
 sell(2)
