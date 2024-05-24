@@ -48,9 +48,6 @@ chunk size = (delta * 2) + 0x20
 
   ![](/assets/2024-04-26-House%20of%20Corrosion/2024-05-24-15-32-42.png)
 
-- Tuy nhiên chúng ta có flag ở chunk trong heap
-
-  ![](/assets/2024-04-26-House%20of%20Corrosion/2024-05-24-15-36-59.png)
 
 - Như đã phân tích ở trên, mặc dù `flag` đã được load vào heap nhưng không có cách nào để in ra. Khi này chúng ta có thể sử dụng FSOP, để in flag.
 - Trong `_malloc_assert` có `__fxprintf` có tham số đầu tiên là `NULL` sẽ sử dụng `stderr`. Do vậy ta sẽ overwrite `stderr` để in ra flag.
