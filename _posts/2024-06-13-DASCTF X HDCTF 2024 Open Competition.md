@@ -8,7 +8,6 @@ math: true
 ---
 
 - Một giải khá hay giúp mình học được nhiều kĩ thuật mới.
-  ![](/assets/2024-06-13-DASCTF%20X%20HDCTF%202024%20Open%20Competition/2024-06-13-16-09-17.png)
 
 ## 签个到吧(pwn_3)
 
@@ -78,6 +77,8 @@ info("one1: " + hex(one))
 
 p.interactive()
 ```
+
+![](/assets/2024-06-13-DASCTF%20X%20HDCTF%202024%20Open%20Competition/2024-06-13-16-09-17.png)
 
 ## 最喜欢的一集 (pwn_4)
 
@@ -167,4 +168,6 @@ p.sendlineafter("choice:",b"1337")
 
 p.interactive()
 ```
+
 ## PRETTez
+- Mình sẽ cố gắng bổ sung sau
