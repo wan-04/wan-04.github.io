@@ -17,7 +17,7 @@ math: true
 - Sau đó, mình sử dụng 2 con trỏ stack để ghi `got.exit` và `got.exit+3` lên stack
 - Cuối cùng overwrite `exit` thành `system`
 
-```c
+```python
 #!/usr/bin/python3
 
 from pwn import *
