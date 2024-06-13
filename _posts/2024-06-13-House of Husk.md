@@ -92,3 +92,6 @@ __register_printf_specifier (int spec, printf_function converter,
 
 - `__printf_function_table` cần khác 0
 - `__printf_arginfo_table` overwrite thành địa chỉ chứa onegadget
+
+## Reference
+https://xz.aliyun.com/t/12304?time__1311=mqmhD57KGI%3Dx7Dlox2DUhzY05AIry4G%3D4D&alichlgref=https%3A%2F%2Fwww.bing.com%2F
