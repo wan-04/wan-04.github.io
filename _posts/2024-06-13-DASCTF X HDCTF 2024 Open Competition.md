@@ -106,7 +106,6 @@ def GDB():
     if not args.REMOTE:
         gdb.attach(p, gdbscript='''
         # brva 0x1D98
-
         c
         ''')
         input()
