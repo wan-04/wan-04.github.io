@@ -169,4 +169,83 @@ p.interactive()
 ```
 
 ## PRETTez
-- Mình sẽ cố gắng bổ sung sau
+
+### Find bug
+
+- Chương trình cho phép ta `malloc` 2 chunk 0x40, 0x90. Tuy nhiên, ta thấy có bug BOF `read(0, ptr, 0x90uLL);`
+
+```c
+__int64 __fastcall getInt(const char *a1)
+{
+  unsigned int v2; // [rsp+14h] [rbp-Ch] BYREF
+  unsigned __int64 v3; // [rsp+18h] [rbp-8h]
+
+  v3 = __readfsqword(0x28u);
+  printf("%s", a1);
+  if ( (unsigned int)__isoc99_scanf("%d%*c", &v2) != 1 )
+    exit(1);
+  return v2;
+}
+
+__int64 __fastcall main(int a1, char **a2, char **a3)
+{
+  int Int; // eax
+  char *v4; // rbx
+
+  setvbuf(stdout, 0LL, 2, 0LL);
+  sub_1242();
+  while ( 1 )
+  {
+    while ( 1 )
+    {
+      puts("1. new\n2. show\n3. delete");
+      Int = getInt(">> ");
+      if ( Int != 3 )
+        break;
+      if ( ptr )
+      {
+        free(ptr);
+        ptr = 0LL;
+      }
+      else
+      {
+        puts("Error!Nerver do that");
+      }
+    }
+    if ( Int > 3 )
+      break;
+    if ( Int == 1 )
+    {
+      if ( ptr )
+      {
+        puts("Error!\nLook what you've done");
+      }
+      else
+      {
+        if ( (unsigned int)getInt("SIZE(1.0x40 ;2.0x90 )") == 1 )
+          ptr = (char *)malloc(0x40uLL);
+        else
+          ptr = (char *)malloc(0x90uLL);
+        printf("INPUT:");
+        read(0, ptr, 0x90uLL);
+        v4 = ptr;
+        v4[strcspn(ptr, "\n")] = 0;
+      }
+    }
+    else
+    {
+      if ( Int != 2 )
+        break;
+      if ( ptr )
+        printf("Content: %s\n", ptr);
+      else
+        puts("Error!You may miss something");
+    }
+  }
+  puts("It's PREETYez,Right?");
+  return 0LL;
+}
+```
+### Khai thác
+- Ta có bug BOF nên ta có thể sử dụng kĩ thuật House of Oragne. Tuy nhiên chúng ta cần malloc 1 chunk lớn hơn chunk size top chunk nhưng chương trình đã cố định 2 size 0x40 và 0x90. Chú ý ở `setvbuf(stdout, 0LL, 2, 0LL); __isoc99_scanf("%d%*c", &v2)` thì do chương trình chỉ `setvbuf` cho stdout nên nếu scanf nhận khối lượng lớn (khoảng hơn 0x1000 byte), `scanf` sẽ call `malloc và free`
+- 
