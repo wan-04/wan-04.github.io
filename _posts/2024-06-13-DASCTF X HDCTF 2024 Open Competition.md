@@ -13,8 +13,8 @@ math: true
 
 ### Reference
 
-- Bài này mình thấy khá hay, cảm ơn `0RAYS` đã chia sẽ solution.
-
+- Bài này mình thấy khá hay, cảm ơn `0RAYS` đã chia sẻ solution.
+- https://bbs.kanxue.com/thread-279588.htm#msg_header_h3_3
 ### Find bug
 
 - Chương trình cho phép ta `malloc` 2 chunk 0x40, 0x90. Tuy nhiên, ta thấy có bug BOF `read(0, ptr, 0x90uLL);`
